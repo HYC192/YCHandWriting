@@ -7,7 +7,8 @@
 //
 
 #import "YCBaseHandWriteViewController.h"
-
+#define kYCScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define kYCScreenHeight [[UIScreen mainScreen] bounds].size.height
 @interface YCBaseHandWriteViewController ()
 
 @end
@@ -16,9 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor grayColor];
-    self.handWriteView = [[YCHandWriteView alloc] initWithFrame:CGRectMake(10,70, 300, 100)];
+    self.handWriteView = [[YCHandWriteView alloc] initWithFrame:CGRectMake(0,64, kYCScreenWidth, 100)];
     self.handWriteView.backgroundColor = [UIColor whiteColor];
     self.handWriteView.delegate =self;
     self.handWriteView.showMessage =@"完成";
